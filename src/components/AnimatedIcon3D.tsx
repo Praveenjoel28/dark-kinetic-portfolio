@@ -3,6 +3,7 @@ import { useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Sphere, Box, Torus } from "@react-three/drei";
 import { motion } from "framer-motion";
+import * as THREE from "three";
 
 interface AnimatedMeshProps {
   type: "sphere" | "box" | "torus";
@@ -11,7 +12,7 @@ interface AnimatedMeshProps {
 }
 
 const AnimatedMesh = ({ type, color, position }: AnimatedMeshProps) => {
-  const meshRef = useRef<any>();
+  const meshRef = useRef<THREE.Mesh>(null);
 
   useFrame((state) => {
     if (meshRef.current) {
@@ -22,24 +23,41 @@ const AnimatedMesh = ({ type, color, position }: AnimatedMeshProps) => {
   });
 
   const renderMesh = () => {
+    const materialProps = {
+      color: color,
+      emissive: color,
+      emissiveIntensity: 0.2,
+    };
+
     switch (type) {
       case "sphere":
-        return <Sphere ref={meshRef} args={[0.5, 32, 32]} position={position} />;
+        return (
+          <Sphere ref={meshRef} args={[0.5, 32, 32]} position={position}>
+            <meshStandardMaterial {...materialProps} />
+          </Sphere>
+        );
       case "box":
-        return <Box ref={meshRef} args={[0.8, 0.8, 0.8]} position={position} />;
+        return (
+          <Box ref={meshRef} args={[0.8, 0.8, 0.8]} position={position}>
+            <meshStandardMaterial {...materialProps} />
+          </Box>
+        );
       case "torus":
-        return <Torus ref={meshRef} args={[0.4, 0.2, 16, 32]} position={position} />;
+        return (
+          <Torus ref={meshRef} args={[0.4, 0.2, 16, 32]} position={position}>
+            <meshStandardMaterial {...materialProps} />
+          </Torus>
+        );
       default:
-        return <Sphere ref={meshRef} args={[0.5, 32, 32]} position={position} />;
+        return (
+          <Sphere ref={meshRef} args={[0.5, 32, 32]} position={position}>
+            <meshStandardMaterial {...materialProps} />
+          </Sphere>
+        );
     }
   };
 
-  return (
-    <>
-      {renderMesh()}
-      <meshStandardMaterial color={color} emissive={color} emissiveIntensity={0.2} />
-    </>
-  );
+  return renderMesh();
 };
 
 interface AnimatedIcon3DProps {
@@ -59,15 +77,9 @@ const AnimatedIcon3D = ({ className = "" }: AnimatedIcon3DProps) => {
         <pointLight position={[10, 10, 10]} />
         <pointLight position={[-10, -10, -10]} color="#b77dff" />
         
-        <mesh>
-          <AnimatedMesh type="sphere" color="#00d4ff" position={[-1, 0, 0]} />
-        </mesh>
-        <mesh>
-          <AnimatedMesh type="box" color="#b77dff" position={[1, 0, 0]} />
-        </mesh>
-        <mesh>
-          <AnimatedMesh type="torus" color="#ff6b9d" position={[0, 1, 0]} />
-        </mesh>
+        <AnimatedMesh type="sphere" color="#00d4ff" position={[-1, 0, 0]} />
+        <AnimatedMesh type="box" color="#b77dff" position={[1, 0, 0]} />
+        <AnimatedMesh type="torus" color="#ff6b9d" position={[0, 1, 0]} />
       </Canvas>
     </motion.div>
   );
