@@ -35,10 +35,10 @@ const AnimatedMesh = ({ type, color, position }: AnimatedMeshProps) => {
   };
 
   return (
-    <mesh>
+    <>
       {renderMesh()}
       <meshStandardMaterial color={color} emissive={color} emissiveIntensity={0.2} />
-    </mesh>
+    </>
   );
 };
 
@@ -59,9 +59,15 @@ const AnimatedIcon3D = ({ className = "" }: AnimatedIcon3DProps) => {
         <pointLight position={[10, 10, 10]} />
         <pointLight position={[-10, -10, -10]} color="#b77dff" />
         
-        <AnimatedMesh type="sphere" color="#00d4ff" position={[-1, 0, 0]} />
-        <AnimatedMesh type="box" color="#b77dff" position={[1, 0, 0]} />
-        <AnimatedMesh type="torus" color="#ff6b9d" position={[0, 1, 0]} />
+        <mesh>
+          <AnimatedMesh type="sphere" color="#00d4ff" position={[-1, 0, 0]} />
+        </mesh>
+        <mesh>
+          <AnimatedMesh type="box" color="#b77dff" position={[1, 0, 0]} />
+        </mesh>
+        <mesh>
+          <AnimatedMesh type="torus" color="#ff6b9d" position={[0, 1, 0]} />
+        </mesh>
       </Canvas>
     </motion.div>
   );
