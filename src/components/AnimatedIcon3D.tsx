@@ -1,7 +1,6 @@
 
 import { useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Sphere, Box, Torus } from "@react-three/drei";
 import { motion } from "framer-motion";
 import * as THREE from "three";
 
@@ -22,42 +21,29 @@ const AnimatedMesh = ({ type, color, position }: AnimatedMeshProps) => {
     }
   });
 
-  const renderMesh = () => {
-    const materialProps = {
-      color: color,
-      emissive: color,
-      emissiveIntensity: 0.2,
-    };
-
+  const getGeometry = () => {
     switch (type) {
       case "sphere":
-        return (
-          <Sphere ref={meshRef} args={[0.5, 32, 32]} position={position}>
-            <meshStandardMaterial {...materialProps} />
-          </Sphere>
-        );
+        return <sphereGeometry args={[0.5, 32, 32]} />;
       case "box":
-        return (
-          <Box ref={meshRef} args={[0.8, 0.8, 0.8]} position={position}>
-            <meshStandardMaterial {...materialProps} />
-          </Box>
-        );
+        return <boxGeometry args={[0.8, 0.8, 0.8]} />;
       case "torus":
-        return (
-          <Torus ref={meshRef} args={[0.4, 0.2, 16, 32]} position={position}>
-            <meshStandardMaterial {...materialProps} />
-          </Torus>
-        );
+        return <torusGeometry args={[0.4, 0.2, 16, 32]} />;
       default:
-        return (
-          <Sphere ref={meshRef} args={[0.5, 32, 32]} position={position}>
-            <meshStandardMaterial {...materialProps} />
-          </Sphere>
-        );
+        return <sphereGeometry args={[0.5, 32, 32]} />;
     }
   };
 
-  return renderMesh();
+  return (
+    <mesh ref={meshRef} position={position}>
+      {getGeometry()}
+      <meshStandardMaterial 
+        color={color} 
+        emissive={color} 
+        emissiveIntensity={0.2} 
+      />
+    </mesh>
+  );
 };
 
 interface AnimatedIcon3DProps {
