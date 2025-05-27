@@ -21,6 +21,21 @@ const ProjectsPage = () => {
       githubUrl: "https://github.com/praveenjoel"
     },
     {
+      title: "Photo Editor Portfolio",
+      description: "A comprehensive photo editing portfolio showcasing advanced image manipulation, color correction, and creative visual effects using professional editing software.",
+      tech: ["Photoshop", "Lightroom", "GIMP", "Color Grading"],
+      features: [
+        "Professional photo retouching",
+        "Color correction and grading",
+        "Creative visual effects",
+        "Portrait enhancement",
+        "Background manipulation"
+      ],
+      image: "/lovable-uploads/5709ec3a-ecd6-4660-a9c6-61581d3a506d.png",
+      demoUrl: "#",
+      githubUrl: "https://github.com/praveenjoel"
+    },
+    {
       title: "Portfolio Website",
       description: "A modern, animated portfolio website showcasing my skills and projects with stunning visual effects and smooth transitions.",
       tech: ["React", "Three.js", "Framer Motion", "Tailwind CSS"],
