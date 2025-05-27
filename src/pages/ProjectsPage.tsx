@@ -16,7 +16,7 @@ const ProjectsPage = () => {
         "Custom animations and effects",
         "Product cart functionality"
       ],
-      image: "/api/placeholder/400/250",
+      image: "/lovable-uploads/095c9629-cdcd-4c79-ad35-b7c59e05081f.png",
       demoUrl: "#",
       githubUrl: "https://github.com/praveenjoel"
     },
@@ -62,12 +62,14 @@ const ProjectsPage = () => {
               whileHover={{ scale: 1.05, y: -10 }}
             >
               <div className="relative overflow-hidden">
-                <motion.div
-                  className="w-full h-48 bg-gradient-to-br from-neon-blue to-neon-purple opacity-80"
+                <motion.img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-48 object-cover"
                   whileHover={{ scale: 1.1 }}
                   transition={{ duration: 0.3 }}
                 />
-                <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
+                <div className="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
                   <div className="text-white text-center">
                     <h3 className="text-xl font-bold mb-2">{project.title}</h3>
                     <p className="text-sm opacity-80">Hover to explore</p>
