@@ -34,21 +34,6 @@ const ProjectsPage = () => {
       image: "/api/placeholder/400/250",
       demoUrl: "#",
       githubUrl: "https://github.com/praveenjoel"
-    },
-    {
-      title: "Web Development Projects",
-      description: "Collection of various web development projects demonstrating proficiency in multiple technologies and frameworks.",
-      tech: ["HTML", "CSS", "JavaScript", "Various Frameworks"],
-      features: [
-        "Multiple project implementations",
-        "Cross-browser compatibility",
-        "Modern design patterns",
-        "Performance optimization",
-        "Clean, maintainable code"
-      ],
-      image: "/api/placeholder/400/250",
-      demoUrl: "#",
-      githubUrl: "https://github.com/praveenjoel"
     }
   ];
 
