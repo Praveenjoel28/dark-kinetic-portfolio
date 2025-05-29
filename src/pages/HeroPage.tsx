@@ -28,10 +28,10 @@ const HeroPage = ({ onPageChange }: HeroPageProps) => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.2 }}
           >
-            <span className="neon-text tracking-wider">ALEX</span>
+            <span className="neon-text tracking-wider">PRAVEEN</span>
             <br />
             <span className="animated-gradient-bg bg-clip-text text-transparent tracking-widest">
-              NOVA
+              JOEL P
             </span>
           </motion.h1>
 
