@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
@@ -34,10 +33,10 @@ const Navigation = ({ currentPage, onPageChange }: NavigationProps) => {
           <div className="glass-effect rounded-full px-8 py-4">
             <div className="flex items-center justify-between">
               <motion.div
-                className="text-2xl font-bold neon-text"
+                className="text-2xl font-bold neon-text font-orbitron tracking-wider"
                 whileHover={{ scale: 1.05 }}
               >
-                Praveen Joel P
+                ALEX NOVA
               </motion.div>
               <div className="flex space-x-8">
                 {pages.map((page) => (
@@ -75,7 +74,7 @@ const Navigation = ({ currentPage, onPageChange }: NavigationProps) => {
       >
         <div className="glass-effect rounded-xl px-6 py-4">
           <div className="flex items-center justify-between">
-            <div className="text-xl font-bold neon-text">Praveen Joel P</div>
+            <div className="text-xl font-bold neon-text font-orbitron tracking-wider">ALEX NOVA</div>
             <motion.button
               onClick={() => setIsOpen(!isOpen)}
               whileTap={{ scale: 0.95 }}

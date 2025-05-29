@@ -23,27 +23,27 @@ const HeroPage = ({ onPageChange }: HeroPageProps) => {
           <AnimatedIcon3D className="mx-auto mb-8" />
           
           <motion.h1
-            className="text-6xl md:text-8xl font-bold mb-6"
+            className="text-6xl md:text-8xl font-bold mb-6 font-orbitron"
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.2 }}
           >
-            <span className="neon-text">Praveen</span>
+            <span className="neon-text tracking-wider">ALEX</span>
             <br />
-            <span className="animated-gradient-bg bg-clip-text text-transparent">
-              Joel P
+            <span className="animated-gradient-bg bg-clip-text text-transparent tracking-widest">
+              NOVA
             </span>
           </motion.h1>
 
           <motion.p
-            className="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto"
+            className="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto font-orbitron"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4 }}
           >
-            Full Stack Developer & Creative Technologist
+            Web Developer & Creative Editor
             <br />
-            Building the future with code and creativity
+            Crafting digital experiences with code and creativity
           </motion.p>
 
           <motion.div

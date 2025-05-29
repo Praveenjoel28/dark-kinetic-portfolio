@@ -69,6 +69,9 @@ export default {
 				'neon-purple': '#b77dff',
 				'neon-pink': '#ff6b9d',
 			},
+			fontFamily: {
+				'orbitron': ['Orbitron', 'monospace'],
+			},
 			backgroundImage: {
 				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
 				'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
